@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.scss';
 import './AppLib.scss'
 import Login from './Components/Login'
@@ -21,11 +21,9 @@ function App() {
   return (
     <div className="App">
 
-      <BrowserRouter>
         <Routes>
-          <Route path='/'>
-            <Route index path='/Guest' element={<Guest />}/>
-            <Route path='/Login' element={<Login />} />
+            <Route path='/' element={<Login />} />
+            <Route path='/Guest' element={<Guest />}/>
             <Route path='/ExpPage' element={<ExpPage />} />
             <Route path='/Admin' element={
               <RequireAuth>
@@ -33,9 +31,7 @@ function App() {
               </RequireAuth>
             } 
             />
-          </Route>
         </Routes>
-      </BrowserRouter>
 
       
     </div>

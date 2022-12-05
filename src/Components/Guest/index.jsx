@@ -11,7 +11,7 @@ const Guest = () => {
   return (
     <div className='Guest'>
         <div className='back-button'>
-          <Link to="/Login">
+          <Link to="/">
           <button><FontAwesomeIcon icon={faArrowAltCircleLeft} size="2xl" color='#9f7582'/></button>
           </Link>
         </div>
