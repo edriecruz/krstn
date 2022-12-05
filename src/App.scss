@@ -1,0 +1,17 @@
+@use 'AppLib';
+
+.App {
+    @include AppLib.transition;
+    background-color: AppLib.$pcolor;
+    height: 100vh;
+    width: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+    .section{
+        @include AppLib.transition;
+        height: 100vh;
+        scroll-snap-align: start;
+    }
+}

@@ -1,0 +1,75 @@
+@use '/src/AppLib.scss';
+
+.exppage{
+    @include AppLib.transition;
+    position: relative;
+    .exppage-header{
+        @include AppLib.transition; 
+        display: flex;
+        text-align: center;
+        margin-top: 20px;
+        
+        .link{
+            @include AppLib.transition;
+            flex: 1;
+            .return-button{
+                @include AppLib.transition;
+                width: 100px;
+                height: 30px;
+                border: 0px;
+                background-color: AppLib.$scolor;
+                color: AppLib.$pcolor;
+                border-radius: 10px;
+                font-family: 'Garet';
+                &:hover{
+                    background-color: AppLib.$tcolor;
+                    color: AppLib.$pcolor;
+                }
+                &:focus{
+                    background-color: AppLib.$scolor;
+                    color: AppLib.$tcolor;    
+                }
+            }
+        }
+        .exppage-title{
+            @include AppLib.transition;
+            flex: 3;
+            font-family: 'Garet';
+            font-size: 25px;
+            font-weight: 700;
+            color: AppLib.$scolor;
+            padding-bottom: 20px;
+            border-bottom: 1px AppLib.$tcolor solid;
+        }
+        .exppage-button{
+            flex: 1;
+            button{
+                width: 150px;
+                height: 30px;
+                border: 0px;
+                background-color: AppLib.$scolor;
+                color: AppLib.$pcolor;
+                border-radius: 10px;
+                font-family: 'Garet';
+                &:hover{
+                    background-color: AppLib.$tcolor;
+                    color: AppLib.$pcolor;
+                }
+                &:focus{
+                    background-color: AppLib.$scolor;
+                    color: AppLib.$tcolor;    
+                }
+            }
+        }
+    }
+
+
+
+    .whole-exppage{
+        @include AppLib.transition;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+}

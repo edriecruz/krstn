@@ -1,0 +1,56 @@
+@use '/src/AppLib.scss';
+
+    .back-button{
+        @include AppLib.transition;
+        position: absolute;
+        top: 5%;
+        @include AppLib.s{
+            margin-left: 10px;
+        }
+        @include AppLib.m{
+            margin-left: 95px;
+        }
+        button{
+            @include AppLib.transition;
+            outline: none;
+            border: 0px;
+            background: AppLib.$pcolor;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.2)
+            }
+        }
+    }
+
+    .left-design{
+        @include AppLib.transition;
+        font-family: 'Hero Light';
+        position: absolute;
+        top: 50%;
+        rotate: 270deg;
+        letter-spacing: 5px;
+        color: AppLib.$scolor;
+        @include AppLib.s{
+            margin-left: -75px;
+        }
+        @include AppLib.m{
+            margin-left: 10px;
+        }
+        
+    }
+    .right-design{
+        @include AppLib.transition;
+        font-family: 'Hero Light';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        rotate: 90deg;
+        letter-spacing: 5px;
+        color: AppLib.$scolor;
+        @include AppLib.s{
+            margin-right: -10px;
+        }
+        @include AppLib.m{
+            margin-right: 5%;
+        }
+    }

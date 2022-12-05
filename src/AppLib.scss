@@ -1,0 +1,110 @@
+// variables
+$pcolor: #efe3e5;
+$scolor: #9f7582;
+$tcolor: #533733;
+$breakpoints: (
+  "s": 0,
+  "m": 720px,
+  "l": 1200px,
+);  
+
+// mixins
+@mixin transition {
+  transition: ease 1s;
+}
+@mixin fadein-animation{
+  animation: fadein 2s;
+  @keyframes fadein {
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+  }
+}
+@mixin buttons{
+  background-color: $scolor;
+  color: $pcolor;
+  cursor: pointer;
+  &:hover{
+    background-color: $tcolor;
+    color: $pcolor;
+  }
+}
+@mixin polaroid {
+  aspect-ratio: 3/4;
+  border-top: 15px solid #e2e2e2e2;
+  border-left: 10px solid #e2e2e2e2;
+  border-right: 10px solid #e2e2e2e2;
+  border-bottom: 40px solid #e2e2e2e2;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+  filter: grayscale(100%);
+  transition: all .75s ease-in-out;
+  &:hover {
+    filter: none;
+    transform: scale(1.2) rotate(0);
+  }
+}
+
+// mixins - breakpoints
+@mixin s {
+  @media (min-width: map-get($breakpoints, "s")) {
+    @content;
+  }
+}
+@mixin m {
+  @media (min-width: map-get($breakpoints, "m")) {
+    @content;
+  }
+}
+@mixin l {
+  @media (min-width: map-get($breakpoints, "l")) {
+    @content;
+  }
+}
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@font-face {
+  font-family: 'Brittany Signature';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Brittany Signature'), url('./Assets/Fonts/britannysignature.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hero Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Hero Light Regular'), url('./Assets/Fonts/herolight.woff') format('woff');
+  }
+  
+@font-face {
+  font-family: 'Black Mango Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Black Mango Black') url('./Assets/Fonts/blackmangoblack.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Garet';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Garet') url("https://db.onlinewebfonts.com/t/ab16787f3c5e545a5a3989b329e545cb.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Alegreya'), url('./Assets/Fonts/alegreya.woff') format('woff');
+  }
+
+@font-face {
+  font-family: 'Kollektif';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Kollektif'), url('./Assets/Fonts/kollektif.woff') format('woff');
+  }
+
+// rest

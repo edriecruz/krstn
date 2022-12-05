@@ -1,0 +1,92 @@
+@use '/src/AppLib.scss';
+
+.home{
+    @include AppLib.transition;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include AppLib.s{
+        flex-direction: column;
+    }
+    @include AppLib.m{
+        flex-direction: column;
+    }
+    @include AppLib.l{
+        flex-direction: row;
+    }
+
+    .home-img{
+        @include AppLib.transition;
+        margin: 20px;
+
+        img{
+            @include AppLib.transition;
+            @include AppLib.fadein-animation;
+            transition: ease-in 1s;
+            border-radius: 300px 300px 0 0;
+
+            @include AppLib.s{
+                width: 200px;
+            }
+            @include AppLib.m{
+                width: 300px;
+            }
+            @include AppLib.l{
+                width: 400px;
+                margin-right: 50px;
+            }
+        }
+    }
+    .home-title{
+        @include AppLib.transition;
+        display: flex;
+        flex-direction: column;
+        @include AppLib.fadein-animation;
+        
+        .title-name{
+            @include AppLib.transition;
+            font-family: "Black Mango Black";
+            color: AppLib.$tcolor;
+            @include AppLib.s{
+                font-size:40px;
+            }
+            @include AppLib.m{
+                font-size:60px;
+            }
+            @include AppLib.l{
+                font-size:75px;
+            }
+        }
+        .title-social{
+            @include AppLib.transition;
+            display: flex;
+
+            .social-icons{
+                @include AppLib.transition;
+                display: flex;
+                flex-direction: column;
+
+                .icon{
+                    @include AppLib.transition;
+                    color: AppLib.$tcolor;
+                    margin: 2px;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: AppLib.$scolor;
+                    }
+                }
+            }
+            .social-name{
+                @include AppLib.transition;
+                font-family: "Brittany Signature";
+                color: AppLib.$tcolor;
+                @include AppLib.s{
+                    font-size:40px;
+                }
+                @include AppLib.m{
+                    font-size:50px;
+                }
+            }
+        }
+    }
+}

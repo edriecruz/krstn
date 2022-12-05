@@ -1,0 +1,107 @@
+@use '/src/AppLib.scss';
+
+.login{
+    @include AppLib.transition;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span{
+        margin-top: 10px;
+        font-family: 'Garet';
+        color: AppLib.$scolor;
+        text-transform: uppercase;
+    }
+
+    .login-title{
+        @include AppLib.transition;
+        font-family: 'Brittany Signature';
+        font-weight: 600;
+        color: AppLib.$scolor;
+        @include AppLib.s{
+            font-size: 30px;
+        }
+        @include AppLib.m{
+            font-size: 40px;
+        }
+        
+        @include AppLib.l{
+            font-size: 50px;
+        }
+    }
+
+    .login-form{
+        @include AppLib.transition;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .login-email{
+            @include AppLib.transition;
+            padding: 0px 10px;
+            width: 170px;
+            text-align: center;
+            margin-top: 10px;
+            letter-spacing: 4px;
+            height: 30px;
+            font-family: 'Hero Light';
+            background: AppLib.$pcolor;
+            border: AppLib.$tcolor 1px solid;
+            border-radius: 10px;
+            outline: none;
+            &:focus{
+                border: 1px solid AppLib.$scolor;
+                width: 220px;
+                }
+        }
+        .login-pass{
+            @include AppLib.transition;
+            padding: 0px 10px;
+            width: 170px;
+            text-align: center;
+            margin-top: 10px;
+            letter-spacing: 4px;
+            height: 30px;
+            font-family: 'Hero Light';
+            background: AppLib.$pcolor;
+            border: AppLib.$tcolor 1px solid;
+            border-radius: 10px;
+            outline: none;
+            &:focus{
+                border: 1px solid AppLib.$scolor;
+                width: 220px;
+            }
+        }
+        .login-button{
+            @include AppLib.transition;
+            @include AppLib.buttons;
+            font-family: 'Hero Light';
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin-top: 15px;
+            padding: 5px 30px;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            border: AppLib.$scolor 2px solid;
+        }
+        .guest-link{
+            margin-top: 70px;
+            .login-guest{
+                @include AppLib.transition;
+                @include AppLib.buttons;
+                font-family: 'Hero Light';
+                font-size: 15px;
+                letter-spacing: 3px;
+                padding: 5px 30px;
+                border-radius: 20px;
+                outline: none;
+                cursor: pointer;
+                border: AppLib.$scolor 2px solid;
+            }
+        }
+
+    }
+}
