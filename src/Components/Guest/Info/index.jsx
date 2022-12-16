@@ -1,12 +1,14 @@
 import React from 'react'
 import './index.scss'
-import IMGINFO from '../../../Assets/Images/IMG_INFO.png'
 
 const Info = () => {
   return (
     <div className='section info'>
       <div className='info-img'>
-        <img src={IMGINFO} alt='Info-Img' className='this-info-img'/>
+        <img 
+          src="https://firebasestorage.googleapis.com/v0/b/krstn-f3236.appspot.com/o/Home%26Info%2FIMG_INFO.jpg?alt=media&token=ea0d61fa-9d54-48d1-9a57-d496ee05a5f2" 
+          alt='Info-Img' 
+          className='this-info-img'/>
       </div>
 
       <div className='info-content'>

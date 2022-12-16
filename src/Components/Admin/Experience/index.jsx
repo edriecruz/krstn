@@ -7,9 +7,10 @@ import { collection, onSnapshot, addDoc, serverTimestamp, Timestamp } from 'fire
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 
 // Ant Design
-import { Button, Input, notification, Form, Modal, ConfigProvider } from 'antd'
+import { Button, Input, notification, Form, Modal, ConfigProvider, DatePicker } from 'antd'
 
 import { v4 as uuidv4 } from 'uuid'
+import moment from 'moment';
 import ExpCards from './ExpCards';
 
 const { TextArea } = Input;
@@ -31,9 +32,10 @@ const AdminExperience = () => {
   const [image, setImage] = useState(null)
   const [form, setForm] = useState({
     expId: expId,
-    details: '',
-    title: '',
-    imageUrl: '',
+    details: "",
+    title: "",
+    imageUrl: "",
+    when: "",
     dateCreated: Timestamp.now().toDate()
   })
   
@@ -51,6 +53,15 @@ const AdminExperience = () => {
     })
   }, [])
 
+  // Handle Date Select
+  function pickDate(date, dateString) {
+    setForm({ ...form, when: dateString })
+  }
+  const currentDate = (current) => {
+    let customDate = moment();
+    return current && current > moment(customDate);
+  }
+
   // Handle Image
   const handleImage = e => {
     setImage(e.target.files[0])
@@ -65,6 +76,7 @@ const AdminExperience = () => {
       if (
         !form.details ||
         !form.title ||
+        !form.when ||
         !image
 
       ) {
@@ -96,6 +108,7 @@ const AdminExperience = () => {
               details: "",
               title: "",
               imageUrl: "",
+              when: "",
               dateCreated: serverTimestamp(),
             })
 
@@ -114,6 +127,7 @@ const AdminExperience = () => {
               expId: form.expId,
               details: form.details,
               title: form.title,
+              when: form.when,
               imageUrl: downloadURL,
             })
           });
@@ -170,7 +184,9 @@ const AdminExperience = () => {
 
             {/* Title */}
             <p>Experience Title</p>
-            <Form.Item name="title">
+            <Form.Item 
+            name="title"
+            rules={[{ required: true, message: 'Please add title' }]}>
               <Input 
               placeholder='Title'
               value={form.title}
@@ -180,9 +196,26 @@ const AdminExperience = () => {
               />
             </Form.Item>
 
+            {/* When */}
+            <p>Date Happened</p>
+            <Form.Item
+              name="date"
+              rules={[{ required: true, message: 'Please select date' }]}
+            >
+              <DatePicker type='date'
+                value={form.when}
+                onChange={pickDate}
+                disabled={loading}
+                onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+                disabledDate={currentDate}
+              />
+            </Form.Item>
+
             {/* Details */}
             <p>Details</p>
-            <Form.Item name="detail">
+            <Form.Item 
+            name="detail"
+            rules={[{ required: true, message: 'Please add some details' }]}>
               <TextArea 
               placeholder='Details'
               value={form.details}

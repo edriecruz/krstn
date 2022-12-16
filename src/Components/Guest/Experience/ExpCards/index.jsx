@@ -27,8 +27,8 @@ const ExpCards = ({exp}) => {
       >             
       <div className='exp-modal'>
           <p className='modal-id'> {exp.expId} </p>
-          <p className='modal-title'> {exp.title} </p> 
-          <p className='modal-date'> { exp.dateCreated.toDate().toDateString()} </p>
+          <p className='modal-title'><b>{exp.title}</b></p> 
+          <p className='modal-when'> {exp.when}</p> 
           <img src={exp.imageUrl} alt='img' className='modal-image' />
           <p className='modal-details'>{exp.details} </p>
       </div>

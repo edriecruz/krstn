@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.scss'
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
-// Images
-import IMGHOME from '../../../Assets/Images/IMG_HOME.jpg' 
-
 const Home = () => {
+
+  
 
   return (
     <div className='section home'>
       <div className='home-img'>
-        <img src={IMGHOME} alt='Home-Img' className='this-home-img'/>
+        <img 
+          src="https://firebasestorage.googleapis.com/v0/b/krstn-f3236.appspot.com/o/Home%26Info%2FIMG_HOME.jpg?alt=media&token=65ac3f35-e14c-4e82-bc93-d77ba8786265" 
+          alt='Home-Img' 
+          className='this-home-img'/>
+        
       </div>
 
       <div className='home-title'>

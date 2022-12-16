@@ -30,25 +30,26 @@
             font-family: 'Garet';
             font-size: 30px;
         }
+        .modal-when{
+            font-family: 'Garet';
+        }
         .modal-date{
             font-family: 'Garet';
-
         }
         .modal-details{
             font-family: 'Garet';
             margin-top: 20px;
         }
         .modal-image{
-            aspect-ratio: 3/4;
+            box-sizing: border-box;
+            width: 40vmin;
             @include AppLib.s{
                 width: 300px;
             }
             @include AppLib.m{
-                margin-left: 70px;
                 width: 350px;
             }
             @include AppLib.l{
-                margin-left: 40px;
                 width: 400px;
             }
         }
