@@ -13,9 +13,10 @@ $breakpoints: (
   transition: ease 1s;
 }
 @mixin fadein-animation{
-  animation: fadein 2s;
-  @keyframes fadein {
+  animation: fadein 5s;
+   @keyframes fadein {
     0% {opacity: 0;}
+    20%{opacity: 0;}
     100%{opacity: 1;}
   }
 }
@@ -30,6 +31,7 @@ $breakpoints: (
 }
 @mixin polaroid {
   aspect-ratio: 3/4;
+  object-fit: cover;
   border-top: 15px solid #e2e2e2e2;
   border-left: 10px solid #e2e2e2e2;
   border-right: 10px solid #e2e2e2e2;

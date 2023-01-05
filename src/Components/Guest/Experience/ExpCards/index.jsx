@@ -26,11 +26,13 @@ const ExpCards = ({exp}) => {
       closable={true}
       >             
       <div className='exp-modal'>
-          <p className='modal-id'> {exp.expId} </p>
-          <p className='modal-title'><b>{exp.title}</b></p> 
-          <p className='modal-when'> {exp.when}</p> 
           <img src={exp.imageUrl} alt='img' className='modal-image' />
-          <p className='modal-details'>{exp.details} </p>
+          <div>
+            <p className='modal-id'> {exp.expId} </p>
+            <p className='modal-title'> <b>{exp.title}</b> </p> 
+            <p className='modal-when'> {exp.when} </p> 
+            <p className='modal-details'>{exp.details} </p> 
+          </div>
       </div>
       </Modal>
 

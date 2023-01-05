@@ -21,7 +21,10 @@
         @include AppLib.transition;
         position: relative;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 20px;
+        width: 50em;
+        padding: 5em 0 5em 0;
         justify-items: center;
         .modal-id{
             font-family: 'Garet';
@@ -41,7 +44,6 @@
             margin-top: 20px;
         }
         .modal-image{
-            aspect-ratio: 3/4;
             @include AppLib.s{
                 width: 300px;
             }

@@ -155,12 +155,15 @@ const ExpCards = ({exp}) => {
       closable={true}
       >             
       <div className='exp-modal'>
-          <p className='modal-id'> {exp.expId} </p>
-          <p className='modal-title'> <b>{exp.title}</b> </p> 
-          <p className='modal-when'> {exp.when} </p> 
-          <p className='modal-date'> { exp.dateCreated.toDate().toDateString()} </p>
           <img src={exp.imageUrl} alt='img' className='modal-image' />
-          <p className='modal-details'>{exp.details} </p> 
+          <div>
+            <p className='modal-id'> {exp.expId} </p>
+            <p className='modal-date'> Date Created: { exp.dateCreated.toDate().toDateString()} </p>
+            <p className='modal-title'> <b>{exp.title}</b> </p> 
+            <p className='modal-when'> {exp.when} </p> 
+            <p className='modal-details'>{exp.details} </p> 
+          </div>
+          
           <div className='exp-modal-button'>
             <button onClick={()=>showUpdate()} className="card-update-button"><FontAwesomeIcon icon={faPenToSquare} size="xl"/></button>
             <button onClick={()=>showDeleteConfirm()} className="card-delete-button"><FontAwesomeIcon icon={faTrashCan} size="xl"/></button>
