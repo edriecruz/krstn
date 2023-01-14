@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import './index.scss'
 
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan, faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 import { notification, Input, Modal, Form, Button, ConfigProvider } from 'antd';  
 
 // Firebase
 import { database, storage } from '../../../../firebase';
-import { doc, Timestamp, updateDoc, deleteDoc } from 'firebase/firestore'
-import { ref, uploadBytesResumable, getDownloadURL, deleteObject} from 'firebase/storage';
+import { doc, Timestamp, updateDoc } from 'firebase/firestore'
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 const { TextArea } = Input;
-const { confirm } = Modal;
 
 const ExpCards = ({exp}) => {
   const [modal, setModal] = useState(false);
@@ -21,7 +17,6 @@ const ExpCards = ({exp}) => {
     const showModal = () => {setModal(true);};
     const handleOk = () => {setModal(false);};
     const handleCancel = () => {setModal(false);};
-    const showUpdate = () => {setUpdateModal(true);};
     const updateOk = () => {setUpdateModal(false);};
 
     const [image, setImage] = useState(null)
@@ -33,32 +28,6 @@ const ExpCards = ({exp}) => {
         imageUrl: exp.imageUrl,
         title: exp.title
     })
-
-    // Delete Image/Experience
-    const desertRef = ref(storage, `/Experience/${exp.title}${exp.expId}`);
-
-    const removeExp = id => {
-      setLoading(true)
-
-      setTimeout(() => {
-        deleteDoc(doc(database, "Experience", id))
-        deleteObject(desertRef).then(()=>{
-          notification.open({
-            message:  <> <p className=''> Experience Deleted </p> </>,
-            description:
-            'Your Experience has been deleted permanently',
-          });
-        })
-        .catch((error)=>{
-          notification.open({
-            message:  <> <p className=''> Error Deleting the Experience </p> </>,
-            description:
-            'Please delete again the Experience',
-          });
-        })
-        setLoading(false)
-      }, 2000)
-    }
         
     // Handle Image upon Updating Image
     const handleImage = e => {
@@ -123,22 +92,6 @@ const ExpCards = ({exp}) => {
         setLoading(false)
       }, 1000)
     }
-    
-    function showDeleteConfirm() {
-      confirm({
-        title: 'Are you sure to delete this Experience?',
-        icon: false,
-        content: 'You will not be seeing the Experince again',
-        okText: 'Yes',
-        okType: 'danger',
-        cancelText: 'No',
-        onOk() {
-          setModal(false)
-          removeExp(exp.expId)
-        },
-        onCancel() {},
-      });
-    }
 
   return (
       <>
@@ -159,15 +112,12 @@ const ExpCards = ({exp}) => {
           <div>
             <p className='modal-id'> {exp.expId} </p>
             <p className='modal-date'> Date Created: { exp.dateCreated.toDate().toDateString()} </p>
+            <br/> <br />
             <p className='modal-title'> <b>{exp.title}</b> </p> 
             <p className='modal-when'> {exp.when} </p> 
             <p className='modal-details'>{exp.details} </p> 
           </div>
-          
-          <div className='exp-modal-button'>
-            <button onClick={()=>showUpdate()} className="card-update-button"><FontAwesomeIcon icon={faPenToSquare} size="xl"/></button>
-            <button onClick={()=>showDeleteConfirm()} className="card-delete-button"><FontAwesomeIcon icon={faTrashCan} size="xl"/></button>
-          </div>
+
       </div>
       </Modal>
 

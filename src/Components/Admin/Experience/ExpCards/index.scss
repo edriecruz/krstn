@@ -1,31 +1,40 @@
 @use '/src/AppLib.scss';
 
-        .exp-img {
-            @include AppLib.transition;
-            @include AppLib.polaroid;
-            @include AppLib.s{
-                height: 150px;
-                margin: 10px 10px 0 10px;
-            }
-            @include AppLib.m{
-                height: 220px;
-                margin: 10px 30px 0 30px;
-            }
-            @include AppLib.l{
-                height: 300px;
-                margin: 10px 40px 0 40px;
-            }
-        }
+.exp-img {
+    @include AppLib.transition;
+    @include AppLib.polaroid;
+    @include AppLib.s{
+        height: 150px;
+        margin: 10px 10px 0 10px;
+    }
+    @include AppLib.m{
+        height: 220px;
+        margin: 10px 30px 0 30px;
+    }
+    @include AppLib.l{
+        height: 300px;
+        margin: 10px 40px 0 40px;
+    }
+}
 
     .exp-modal{
         @include AppLib.transition;
-        position: relative;
         display: flex;
         flex-direction: row;
-        gap: 20px;
-        width: 50em;
-        padding: 5em 0 5em 0;
         justify-items: center;
+        align-items: center;
+        padding: 5em 0 5em 0;
+        @include AppLib.s{
+            flex-direction: column;
+            width: 22em;
+        }
+        @include AppLib.m{
+            flex-direction: row;
+            width: 50em;
+        }
+        @include AppLib.l{
+            width: 60em;
+        }
         .modal-id{
             font-family: 'Garet';
         }
@@ -44,35 +53,15 @@
             margin-top: 20px;
         }
         .modal-image{
+            @include AppLib.transition;
             @include AppLib.s{
-                width: 300px;
+                width: 250px;
             }
             @include AppLib.m{
-                margin-left: 70px;
                 width: 350px;
             }
             @include AppLib.l{
-                margin-left: 40px;
-                width: 400px;
-            }
-        }
-        .exp-modal-button{
-            position: absolute;
-            top: 0;
-            right: 4%;
-            .card-update-button{
-                background: steelblue;
-                border-radius: 10px;
-                width: 30px;
-                height: 30px;
-                margin: 0 5px;
-            }
-            .card-delete-button{
-                background: crimson;
-                border-radius: 10px;
-                width: 30px;
-                height: 30px;
-                margin: 0 5px;
+                width: 450px;
             }
         }
     }
