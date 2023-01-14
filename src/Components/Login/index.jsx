@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { AuthContext } from '../../Context/AuthContext'
+import Edrie from '../Edrie'
 
 const Login = () => {
     const [error, setError] = useState(false)
@@ -46,6 +47,7 @@ const Login = () => {
                 <button className='login-guest'>Visit as Guest</button>
                 </Link>
             </form>
+            <Edrie />
     </div>
   )
 }
