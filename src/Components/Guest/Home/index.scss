@@ -60,11 +60,20 @@
         .title-social{
             @include AppLib.transition;
             display: flex;
+            flex-direction: column;
+            @include AppLib.s{
+                justify-content: center;
+                align-items: center;
+            }
+            @include AppLib.l{
+                justify-content: baseline;
+                align-items: baseline;
+            }
 
             .social-icons{
                 @include AppLib.transition;
                 display: flex;
-                flex-direction: column;
+                gap: 20px;
 
                 .icon{
                     @include AppLib.transition;

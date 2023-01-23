@@ -21,12 +21,12 @@ const Home = () => {
       <div className='home-title'>
         <p className='title-name'>Kristine Cruz</p>
         <div className='title-social'>
-          <div className='social-icons'>
-            <a href='https://www.instagram.com/kristinecrz/' target="_blank" rel="noreferrer noopenner" className='icon'><FontAwesomeIcon icon={faInstagram} size="xl"/></a>
-            <a href='https://twitter.com/kristinecrz' target="_blank" rel="noreferrer noopenner" className='icon'><FontAwesomeIcon icon={faTwitter} size="xl"/></a>
-            <a href='https://www.youtube.com/@kristinecrz8587' target="_blank" rel="noreferrer noopenner" className='icon'><FontAwesomeIcon icon={faYoutube} size="xl"/></a>
-          </div>
           <p className='social-name'>@kristinecrz</p>
+          <div className='social-icons'>
+            <a href='https://www.instagram.com/kristinecrz/' target="_blank" rel="noreferrer noopenner" className='icon'><FontAwesomeIcon icon={faInstagram} size="2x"/></a>
+            <a href='https://twitter.com/kristinecrz' target="_blank" rel="noreferrer noopenner" className='icon'><FontAwesomeIcon icon={faTwitter} size="2x"/></a>
+            <a href='https://www.youtube.com/@kristinecrz8587' target="_blank" rel="noreferrer noopenner" className='icon'><FontAwesomeIcon icon={faYoutube} size="2x"/></a>
+          </div>
         </div>
       </div>
     </div>

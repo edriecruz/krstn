@@ -16,10 +16,10 @@ const Guest = () => {
           </Link>
         </div>
         <div className='left-design'>
-        ARTIST PROFILE
+        FIGHT WITH FAITH
         </div>
         <div className='right-design'>
-        2022
+        EST. 2022
         </div>
 
       <Home />
